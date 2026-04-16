@@ -1,5 +1,5 @@
 """
-DAT Service Library — Shared Infrastructure for BAE Systems DAT.
+DAT Service Library — Shared service infrastructure using Hexagonal Architecture.
 
 USAGE:
     from dat_service_lib import (

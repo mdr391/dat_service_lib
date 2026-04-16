@@ -46,7 +46,7 @@ class OrderStatus(Enum):
 class SensorReading:
     """
     A single reading from a factory sensor.
-
+    """
     sensor_id: str
     value: float
     unit: SensorUnit

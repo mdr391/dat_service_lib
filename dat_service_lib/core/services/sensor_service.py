@@ -11,9 +11,8 @@ This layer:
 - NEVER touches infrastructure directly
 """
 import logging
-import statistics
 from datetime import datetime, timedelta
-from typing import List, Optional, Dict, Any
+from typing import List, Optional
 
 from ..ports.interfaces import (
     ReadingRepository,
@@ -26,9 +25,7 @@ from ..domain.models import (
     SensorReading, SensorStats, ReadingStatus, ProcessingResult,
 )
 from ..domain.validators import validate_reading, is_statistical_anomaly
-from ..domain.exceptions import (
-    SensorError, InvalidReadingError, ReadingOutOfRangeError,
-)
+from ..domain.exceptions import SensorError
 
 logger = logging.getLogger(__name__)
 
