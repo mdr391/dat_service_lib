@@ -1,9 +1,6 @@
 """
 Resilience Utilities — Circuit Breaker & Retry.
 
-INTERVIEW POINT: "These are cross-cutting concerns that any
-microservice needs. They're in the shared library so every
-service gets resilience patterns for free."
 """
 import time
 import functools
@@ -117,10 +114,6 @@ def retry(
     """
     Retry decorator with exponential backoff and jitter.
 
-    INTERVIEW POINT: "Jitter prevents thundering herd — if 100
-    services all retry at exactly 2 seconds, the downstream
-    service gets hit by 100 retries simultaneously. Random jitter
-    spreads them out."
 
     Usage:
         @retry(max_attempts=3, base_delay=1.0)

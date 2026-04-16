@@ -1,10 +1,6 @@
 """
 Configuration — Environment-based config loading.
 
-INTERVIEW POINT: "Config is loaded from environment variables with
-YAML fallback and code defaults. The priority chain is:
-ENV VAR → config.yaml → default value.
-This works in Docker/K8s (env vars from ConfigMaps) and local dev."
 """
 import os
 from dataclasses import dataclass, field

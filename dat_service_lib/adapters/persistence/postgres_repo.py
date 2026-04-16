@@ -1,10 +1,6 @@
 """
 PostgreSQL Repository Adapter — Production persistence.
 
-INTERVIEW POINT: "This adapter implements the same interface as
-InMemoryReadingRepo. In production, the service uses this. In tests,
-it uses InMemoryReadingRepo. The SensorService doesn't change at all.
-That's the power of hexagonal architecture + dependency injection."
 """
 import logging
 from datetime import datetime
@@ -78,9 +74,6 @@ class PostgresReadingRepo(ReadingRepository):
         """
         Batch insert using execute_values for performance.
 
-        INTERVIEW POINT: "I use execute_values for batch inserts —
-        it's 10x faster than individual INSERT statements because
-        it reduces network round-trips to one."
         """
         if not readings:
             return 0

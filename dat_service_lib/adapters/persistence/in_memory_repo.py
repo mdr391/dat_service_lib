@@ -1,11 +1,6 @@
 """
 In-Memory Repository Adapter — For Testing.
 
-INTERVIEW POINT: "This adapter implements the same ReadingRepository
-interface as PostgreSQL, but stores everything in a Python list.
-My unit tests use this — they run in milliseconds with zero
-infrastructure dependencies. The business logic doesn't know
-or care which repository it's using."
 """
 import statistics as stats_module
 from datetime import datetime

@@ -1,10 +1,6 @@
 """
 Domain Exceptions — Typed error hierarchy for clean error handling.
 
-INTERVIEW POINT: "I design exception hierarchies so callers can catch
-at the right granularity. Catch SensorError for any sensor issue,
-or catch SensorNotFoundError for a specific case. This is cleaner
-than catching generic Exception and parsing error messages."
 """
 
 

@@ -1,10 +1,6 @@
 """
 Alert Adapters — Multiple implementations of the AlertNotifier port.
 
-INTERVIEW POINT: "Strategy Pattern in action — the SensorService
-calls alerter.send_alert() without knowing if it goes to Slack,
-email, a log file, or all three. We can swap or combine alerters
-without touching the service layer."
 """
 import logging
 import json
@@ -92,9 +88,6 @@ class CompositeAlertNotifier(AlertNotifier):
     """
     Composite Pattern — sends alerts through multiple notifiers.
 
-    INTERVIEW POINT: "I use the composite pattern to fan out alerts
-    to multiple channels. An anomaly alert goes to Slack AND the
-    log file AND the metrics counter simultaneously."
     """
 
     def __init__(self, notifiers: List[AlertNotifier]):

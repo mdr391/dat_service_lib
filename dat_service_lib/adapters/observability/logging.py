@@ -1,10 +1,6 @@
 """
 Observability Adapters — Structured Logging & Prometheus Metrics.
 
-INTERVIEW POINT: "Every service gets observability for free by using
-this library. One import, one call to setup_logging(), and you have
-structured JSON logs with correlation IDs that ship cleanly to Loki
-via Fluent Bit without regex parsing."
 """
 import logging
 import json
@@ -24,9 +20,6 @@ class JSONFormatter(logging.Formatter):
     """
     Formats log records as JSON — ships cleanly to ELK/Loki.
 
-    INTERVIEW POINT: "JSON-formatted logs are machine-parseable.
-    No regex needed in the log pipeline. Every field is queryable
-    in Grafana/Kibana immediately."
     """
 
     def __init__(self, service_name: str = "dat-service"):
@@ -80,9 +73,6 @@ def setup_logging(
         from dat_service_lib.adapters.observability.logging import setup_logging
         logger = setup_logging("sensor-processor", level="INFO")
 
-    INTERVIEW POINT: "One function call gives every service consistent,
-    structured, correlation-ID-aware logging. No team configures logging
-    differently. That's the 'standardize' in 5S."
     """
     root_logger = logging.getLogger()
     root_logger.setLevel(getattr(logging, level.upper(), logging.INFO))
@@ -116,9 +106,6 @@ class PrometheusMetrics(MetricsEmitter):
     """
     Prometheus metrics adapter — exposes /metrics endpoint.
 
-    INTERVIEW POINT: "I instrument services with RED metrics:
-    Rate (requests/sec), Errors (error rate), Duration (latency).
-    Plus business metrics: readings processed, anomalies detected."
     """
 
     def __init__(self) -> None:

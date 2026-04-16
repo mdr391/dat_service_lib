@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name="dat-service-lib",
     version="1.0.0",
-    description="BAE Systems DAT — Shared Service Library (Hexagonal Architecture)",
+    description="Production-grade shared service library using Hexagonal Architecture (Ports & Adapters)",
     author="Zahidur Rahman",
     python_requires=">=3.8",
     packages=find_packages(),

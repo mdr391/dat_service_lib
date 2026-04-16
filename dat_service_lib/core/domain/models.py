@@ -1,11 +1,6 @@
 """
 Domain Models — Pure Python, Zero Infrastructure Dependencies.
 
-INTERVIEW TALKING POINT:
-"These models have NO imports of PostgreSQL, FastAPI, gRPC, or any
-infrastructure. They're pure dataclasses that represent our business
-concepts. This is the heart of hexagonal architecture — the domain
-is completely independent of how data is stored or transported."
 """
 from dataclasses import dataclass, field, asdict
 from datetime import datetime
@@ -52,9 +47,6 @@ class SensorReading:
     """
     A single reading from a factory sensor.
 
-    INTERVIEW POINT: This is a domain model, not a database row.
-    It has business methods (is_anomaly, to_dict) but no DB logic.
-    """
     sensor_id: str
     value: float
     unit: SensorUnit

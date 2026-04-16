@@ -1,10 +1,6 @@
 """
 Shared Test Fixtures — pytest conftest.py
 
-INTERVIEW POINT: "I use fixtures to create consistent test setups.
-The in_memory_service fixture gives any test a fully wired
-SensorService with in-memory adapters — ready to test business
-logic without any infrastructure."
 """
 import pytest
 from datetime import datetime, timedelta

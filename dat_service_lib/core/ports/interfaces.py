@@ -1,12 +1,6 @@
 """
 Ports — Abstract interfaces that define what the domain NEEDS.
 
-INTERVIEW TALKING POINT:
-"Ports are the contracts between my domain and the outside world.
-The domain says 'I need something that can save readings' — it
-doesn't care if it's PostgreSQL, MongoDB, or an in-memory list.
-The adapter implements the port. This is the Dependency Inversion
-Principle in action."
 
 CRITICAL RULE: Ports live in core/, adapters live in adapters/.
 The domain imports ports, NEVER adapters.
@@ -140,9 +134,6 @@ class AnomalyDetector(Protocol):
     Uses Protocol (Python 3.8) for structural subtyping — any object
     with a matching .detect() method satisfies this contract.
 
-    INTERVIEW POINT: "Protocol enables duck typing with type safety.
-    A junior can implement a new detector without inheriting from
-    anything — they just need a .detect() method with the right signature."
     """
     def detect(self, values: List[float]) -> List[int]:
         """

@@ -1,11 +1,6 @@
 """
 Sensor Service — Business Logic Orchestration.
 
-INTERVIEW TALKING POINT:
-"This is the service layer — it orchestrates domain logic using ports.
-Notice it depends on ReadingRepository and AlertNotifier (abstractions),
-NOT on PostgresRepo or SlackNotifier (implementations). That's why
-I can test the entire business logic with in-memory fakes."
 
 This layer:
 - Validates incoming readings
@@ -158,10 +153,6 @@ class SensorService:
         Process a batch of readings with error isolation.
         One bad reading doesn't stop the batch.
 
-        INTERVIEW POINT: "Batch processing with error isolation —
-        each reading is processed independently. Failures are logged
-        and counted, not propagated. This is critical for sensor data
-        where one bad reading shouldn't block thousands of good ones."
         """
         result = ProcessingResult(
             total_processed=len(readings),

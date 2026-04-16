@@ -1,9 +1,6 @@
 """
 Unit Tests — SensorService with In-Memory Adapters.
 
-INTERVIEW POINT: "These tests prove the hexagonal architecture payoff.
-The entire business logic is tested WITHOUT a database, network, or
-any infrastructure. Tests run in milliseconds and never flake."
 """
 import pytest
 from datetime import datetime

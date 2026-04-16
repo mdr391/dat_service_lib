@@ -1,9 +1,6 @@
 """
 Domain Validators — Pure functions, no infrastructure dependencies.
 
-INTERVIEW POINT: "Validation is a domain concern, not an adapter concern.
-These functions know the business rules (temperature ranges, sensor ID
-formats) but nothing about how data arrives or is stored."
 """
 import re
 from typing import Optional, Tuple

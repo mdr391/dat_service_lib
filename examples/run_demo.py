@@ -49,9 +49,6 @@ def banner(title: str) -> None:
 
 def demo_1_composition_root():
     """
-    INTERVIEW POINT: "The composition root is where I wire adapters
-    to ports. In production, this happens at startup. In tests, I
-    wire in-memory fakes. The business logic is identical either way."
     """
     banner("DEMO 1: Composition Root — Wiring Adapters to Ports")
 
