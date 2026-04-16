@@ -10,7 +10,7 @@ from datetime import datetime
 from typing import List, Optional, Dict, Any, Protocol
 
 from ..domain.models import (
-    SensorReading, SensorStats, SensorThreshold, ProcessingResult,
+    SensorReading, SensorStats, SensorThreshold,
 )
 
 

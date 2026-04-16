@@ -7,7 +7,7 @@ import functools
 import logging
 import random
 from enum import Enum
-from typing import Callable, TypeVar, Any, Optional
+from typing import Callable, TypeVar, Optional
 
 from ..core.domain.exceptions import CircuitOpenError
 

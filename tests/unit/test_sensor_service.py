@@ -3,7 +3,6 @@ Unit Tests — SensorService with In-Memory Adapters.
 
 """
 import pytest
-from datetime import datetime
 
 from dat_service_lib import (
     SensorReading, SensorUnit, SensorThreshold, ReadingStatus,

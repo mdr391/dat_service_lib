@@ -4,7 +4,7 @@ PostgreSQL Repository Adapter — Production persistence.
 """
 import logging
 from datetime import datetime
-from typing import List, Optional, Dict, Any
+from typing import List, Optional
 from contextlib import contextmanager
 
 from ...core.ports.interfaces import ReadingRepository
