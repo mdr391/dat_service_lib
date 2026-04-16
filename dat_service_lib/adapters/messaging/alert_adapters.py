@@ -3,7 +3,6 @@ Alert Adapters — Multiple implementations of the AlertNotifier port.
 
 """
 import logging
-from datetime import datetime
 from typing import Optional, Dict, Any, List
 
 from ...core.ports.interfaces import AlertNotifier
@@ -54,27 +53,7 @@ class SlackAlertNotifier(AlertNotifier):
         severity: str = "warning",
         context: Optional[Dict[str, Any]] = None,
     ) -> bool:
-        severity_emoji = {
-            "info": "ℹ️",
-            "warning": "⚠️",
-            "critical": "🔴",
-        }
-        emoji = severity_emoji.get(severity, "⚠️")
-
-        payload = {
-            "channel": self._channel,
-            "text": f"{emoji} *[{severity.upper()}]* Sensor `{sensor_id}`\n{message}",
-            "attachments": [{
-                "color": "#ff5c5c" if severity == "critical" else "#ffb830",
-                "fields": [
-                    {"title": "Sensor", "value": sensor_id, "short": True},
-                    {"title": "Severity", "value": severity, "short": True},
-                    {"title": "Time", "value": datetime.utcnow().isoformat(), "short": True},
-                ],
-            }],
-        }
-
-        # In production: requests.post(self._webhook_url, json=payload)
+        # In production: POST {"channel", "text", "attachments"} to self._webhook_url
         logger.info("slack_alert_sent", extra={
             "sensor_id": sensor_id,
             "channel": self._channel,

@@ -61,5 +61,7 @@ class ServiceConfig:
             consul_port=int(os.getenv("CONSUL_PORT", str(cls.consul_port))),
             keycloak_url=os.getenv("KEYCLOAK_URL", cls.keycloak_url),
             keycloak_realm=os.getenv("KEYCLOAK_REALM", cls.keycloak_realm),
-            anomaly_z_threshold=float(os.getenv("ANOMALY_Z_THRESHOLD", str(cls.anomaly_z_threshold))),
+            anomaly_z_threshold=float(
+                os.getenv("ANOMALY_Z_THRESHOLD", str(cls.anomaly_z_threshold))
+            ),
         )

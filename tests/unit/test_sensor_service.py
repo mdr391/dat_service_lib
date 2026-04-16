@@ -6,9 +6,6 @@ import pytest
 
 from dat_service_lib import (
     SensorReading, SensorUnit, SensorThreshold, ReadingStatus,
-    SensorService,
-    InMemoryReadingRepo, InMemoryThresholdRepo,
-    LogAlertNotifier, PrometheusMetrics,
     InvalidReadingError, ReadingOutOfRangeError,
     validate_sensor_id, validate_reading_value,
 )

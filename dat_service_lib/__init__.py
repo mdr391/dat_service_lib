@@ -19,12 +19,17 @@ from .core.domain.validators import (
     validate_sensor_id, validate_reading_value, validate_reading, is_statistical_anomaly,
 )
 from .core.ports.interfaces import (
-    ReadingRepository, ThresholdRepository, AlertNotifier, MetricsEmitter, AnomalyDetector, HealthCheck,
+    ReadingRepository, ThresholdRepository, AlertNotifier,
+    MetricsEmitter, AnomalyDetector, HealthCheck,
 )
 from .core.services.sensor_service import SensorService
 from .adapters.persistence.in_memory_repo import InMemoryReadingRepo, InMemoryThresholdRepo
-from .adapters.messaging.alert_adapters import LogAlertNotifier, SlackAlertNotifier, CompositeAlertNotifier
-from .adapters.observability.logging import setup_logging, generate_correlation_id, PrometheusMetrics, NoOpMetrics
+from .adapters.messaging.alert_adapters import (
+    LogAlertNotifier, SlackAlertNotifier, CompositeAlertNotifier,
+)
+from .adapters.observability.logging import (
+    setup_logging, generate_correlation_id, PrometheusMetrics, NoOpMetrics,
+)
 from .adapters.config.settings import ServiceConfig
 from .utils.resilience import CircuitBreaker, CircuitState, retry
 
