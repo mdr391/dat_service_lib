@@ -186,6 +186,4 @@ ANOMALY_Z_THRESHOLD=2.0
 
 ---
 
-## License
-
-MIT
+Copyright © 2026 Zahidur Rahman
